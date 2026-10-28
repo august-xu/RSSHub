@@ -16,7 +16,7 @@ const topicDataHanding = (data, ctx) =>
         switch (item.type) {
             case 'ORIGINAL_POST':
                 content = item.content;
-                link = `https://m.okjike.com/originalPosts/${item.id}`;
+                link = `https://web.okjike.com/originalPosts/${item.id}`;
                 break;
 
             /* case 'QUESTION':
@@ -186,7 +186,7 @@ const constructTopicEntry = async (ctx, url) => {
 
     data.result = {
         title: `${topic.content} - 即刻圈子`,
-        link: url,
+        link: url.replace('m.okjike.com', 'web.okjike.com'),
         description: topic.briefIntro,
         image: topic.squarePicture.picUrl || topic.squarePicture.middlePicUrl || topic.squarePicture.thumbnailUrl,
         // item: topicDataHanding(data),

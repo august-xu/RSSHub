@@ -55,11 +55,11 @@ async function handler(ctx) {
     const getLink = (id, type) => {
         switch (type) {
             case 'REPOST':
-                return `https://m.okjike.com/reposts/${id}`;
+                return `https://web.okjike.com/reposts/${id}`;
             case 'MEDIUM':
                 return `https://www.okjike.com/medium/${id}`;
             default:
-                return `https://m.okjike.com/originalPosts/${id}`;
+                return `https://web.okjike.com/originalPosts/${id}`;
         }
     };
 
@@ -96,7 +96,7 @@ async function handler(ctx) {
 
             let repostContent;
             if (item.type === 'REPOST') {
-                const screenNameTemplate = item.target.user ? `<a href="https://m.okjike.com/users/${escapeAttribute(item.target.user.username)}" target="_blank">@${escapeText(item.target.user.screenName)}</a>` : '';
+                const screenNameTemplate = item.target.user ? `<a href="https://web.okjike.com/users/${escapeAttribute(item.target.user.username)}" target="_blank">@${escapeText(item.target.user.screenName)}</a>` : '';
 
                 let repostImgTemplate = '';
                 if (item.target.pictures) {
@@ -183,7 +183,7 @@ async function handler(ctx) {
     return {
         title: `${data.user.screenName}的即刻动态`,
         description: data.user.bio,
-        link: `https://m.okjike.com/users/${id}`,
+        link: `https://web.okjike.com/users/${id}`,
         image: data.user.avatarImage.picUrl,
         item: items,
     };

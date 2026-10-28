@@ -50,7 +50,7 @@ async function handler(ctx) {
             title: pubDate ? `${data.topic.content} ${dayjs(pubDate).format('MM月DD日')}` : data.topic.content,
             description: escapeText(item.content).replaceAll('\n', '<br>'),
             pubDate,
-            link: `https://m.okjike.com/originalPosts/${item.id}`,
+            link: `https://web.okjike.com/originalPosts/${item.id}`,
         };
     });
     return result;
